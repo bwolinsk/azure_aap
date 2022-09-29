@@ -13,7 +13,7 @@
       azure.azcollection.azure_rm_subnet:
         resource_group: "{{ azure_resourcegroup_name }}"
         name: subnet
-        address_prefix: "10.0.1.0/23"
+        address_prefix: "10.0.0.0/23"
         virtual_network: vNet
 
     - name: Create public IP address
