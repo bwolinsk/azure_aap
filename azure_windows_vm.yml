@@ -70,7 +70,7 @@
     - name: Create VM
       azure.azcollection.azure_rm_virtualmachine:
         resource_group: "{{ azure_resourcegroup_name }}"
-        name: win-vm
+        name: "{{ vm_name }}"
         vm_size: Standard_DS1_v2
         admin_username: bwolinsk@redhat.com
         admin_password: "{{ password }}"
@@ -87,7 +87,7 @@
       azure.azcollection.azure_rm_virtualmachineextension:
         name: winrm-extension
         resource_group: "{{ azure_resourcegroup_name }}"
-        virtual_machine_name: win-vm
+        virtual_machine_name: "{{ vm_name }}"
         publisher: Microsoft.Compute
         virtual_machine_extension_type: CustomScriptExtension
         type_handler_version: '1.9'
