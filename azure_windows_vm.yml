@@ -66,6 +66,15 @@
           - name: default
             public_ip_address_name: pip
             primary: True
+            
+    - name: Create virtual network interface card
+      azure_rm_networkinterface:
+        resource_group: "{{ azure_resourcegroup_name }}"
+        name: "{{ vm_name }}_NIC"
+        virtual_network: vNet
+        subnet: subnet
+        security_group: networkSecurityGroup
+      register: vm_nic
 
     - name: Create VM
       azure.azcollection.azure_rm_virtualmachine:
@@ -74,7 +83,7 @@
         vm_size: Standard_DS1_v2
         admin_username: "{{ username }}"
         admin_password: "{{ password }}"
-        network_interfaces: nic
+        network_interfaces: "{{ vm_name }}_NIC"
         os_type: Windows
         image:
           offer: WindowsServer
