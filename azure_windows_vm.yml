@@ -72,7 +72,7 @@
         resource_group: "{{ azure_resourcegroup_name }}"
         name: "{{ vm_name }}"
         vm_size: Standard_DS1_v2
-        admin_username: bwolinsk@redhat.com
+        admin_username: "{{ username }}"
         admin_password: "{{ password }}"
         network_interfaces: nic
         os_type: Windows
