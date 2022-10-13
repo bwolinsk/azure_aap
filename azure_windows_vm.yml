@@ -81,7 +81,7 @@
           publisher: MicrosoftWindowsServer
           sku: 2019-Datacenter
           version: latest
-      no_log: true
+      no_log: false
 
     - name: Create VM script extension to enable HTTPS WinRM listener
       azure.azcollection.azure_rm_virtualmachineextension:
