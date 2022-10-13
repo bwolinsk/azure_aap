@@ -87,7 +87,6 @@
         os_type: Windows
         tags:
           "os_type": "Windows"
-          "env": "{{ environment }}"
         image:
           offer: WindowsServer
           publisher: MicrosoftWindowsServer
