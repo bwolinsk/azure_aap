@@ -1,0 +1,29 @@
+---
+- name: Install IIS Web Server
+  hosts: all
+  tasks:
+  
+    - name: Install IIS Web-Server with sub features and management tools
+      ansible.windows.win_feature:
+        name: 
+          - Web-Server
+          - Web-Common-Http
+        state: present
+      register: win_feature
+ 
+    - name: Disable Windows Firewall
+      community.windows.win_firewall:
+        state: disabled
+        profiles:
+        - Domain
+        - Private
+        - Public
+
+    - name: Create website index.html
+      win_copy:
+        content: "This is the Windows Server"
+        dest: C:\Inetpub\wwwroot\index.html
+        
+    - name: Reboot if installing Web-Server feature requires it
+      ansible.windows.win_reboot:
+      when: win_feature.reboot_required
