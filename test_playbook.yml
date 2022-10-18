@@ -5,6 +5,10 @@
     ansible_winrm_server_cert_validation: ignore
   tasks:
     # Install/uninstall with win_package
+    - name: Create temp folder
+      win_file:
+        path: C:\temp
+        state: directory
     - name: Download the 7-Zip package
       win_get_url:
         url: https://www.7-zip.org/a/7z1701-x64.msi
