@@ -20,7 +20,7 @@
       azure.azcollection.azure_rm_publicipaddress:
         resource_group: "{{ azure_resourcegroup_name }}"
         allocation_method: Static
-        name: pip
+        name: "{{ win_public_ip_name }}"
       register: output_ip_address
 
     - name: Output public IP
@@ -64,7 +64,7 @@
         security_group: networkSecurityGroup
         ip_configurations:
           - name: default
-            public_ip_address_name: pip
+            public_ip_address_name: "{{ win_public_ip_name }}"
             primary: True
             
     - name: Create virtual network interface card
@@ -108,7 +108,7 @@
     - name: Get facts for one Public IP
       azure.azcollection.azure_rm_publicipaddress_info:
         resource_group: "{{ azure_resourcegroup_name }}"
-        name: pip
+        name: "{{ win_public_ip_name }}"
       register: publicipaddresses
 
     - name: set public ip address fact
