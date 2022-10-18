@@ -1,5 +1,8 @@
 ---
 - hosts: all
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
   tasks:
     # Install/uninstall with win_package
     - name: Download the 7-Zip package
