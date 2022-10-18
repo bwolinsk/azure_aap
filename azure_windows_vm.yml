@@ -57,7 +57,7 @@
 
     - name: Create a network interface
       azure.azcollection.azure_rm_networkinterface:
-        name: nic
+        name: "{{ vm_name }}_NIC"
         resource_group: "{{ azure_resourcegroup_name }}"
         virtual_network: vNet
         subnet_name: subnet
@@ -66,16 +66,7 @@
           - name: default
             public_ip_address_name: "{{ win_public_ip_name }}"
             primary: True
-            
-    - name: Create virtual network interface card
-      azure_rm_networkinterface:
-        resource_group: "{{ azure_resourcegroup_name }}"
-        name: "{{ vm_name }}_NIC"
-        virtual_network: vNet
-        subnet: subnet
-        security_group: networkSecurityGroup
-      register: vm_nic
-
+    
     - name: Create VM
       azure.azcollection.azure_rm_virtualmachine:
         resource_group: "{{ azure_resourcegroup_name }}"
