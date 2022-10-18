@@ -7,7 +7,7 @@
   tasks:
   
     - name: Install IIS Web-Server with sub features and management tools
-      ansible.windows.win_feature:
+      win_feature:
         name: 
           - Web-Server
           - Web-Common-Http
