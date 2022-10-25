@@ -1,6 +1,7 @@
 ---
 - name: Install IIS Web Server
   hosts: all
+  serial: "{{ serial }}"
   vars:
     ansible_connection: winrm
     ansible_winrm_server_cert_validation: ignore
