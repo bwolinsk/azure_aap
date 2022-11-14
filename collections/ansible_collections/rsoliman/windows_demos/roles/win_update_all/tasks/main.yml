@@ -1,0 +1,6 @@
+---
+- name: ensure common OS updates are current
+  ansible.windows.win_updates:
+    category_names: "{{ win_updates_category }}"
+    reboot: "{{ restart_after_update }}"
+  register: update_result

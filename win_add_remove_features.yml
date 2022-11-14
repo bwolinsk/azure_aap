@@ -1,0 +1,8 @@
+- name: Add or Remove Windows features
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
+  roles:
+  - rsoliman.windows_demos.win_add_remove_features
