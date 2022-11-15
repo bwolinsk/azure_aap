@@ -5,4 +5,4 @@ ansible_connection: winrm
 #ansible_user: Administrator
 ansible_winrm_server_cert_validation: ignore
 web_port: 8080
-web_dir: C:\wwwroot\ansibledemo
+web_dir: C:\Inetpub\wwwroot
