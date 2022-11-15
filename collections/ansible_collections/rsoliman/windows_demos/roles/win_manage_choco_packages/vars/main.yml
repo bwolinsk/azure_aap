@@ -1,4 +1,3 @@
 ---
 # vars file for win-install-choco-packages
 choco_packages_state: "{{ choco_packages_state_choice | default('present') }}"
-choco_packages: "{{ choco_packages_choice.split('\n') }}"
