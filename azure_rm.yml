@@ -1,0 +1,7 @@
+plugin: azure.azcollection.azure_rm
+include_vm_resource_groups:
+  - openenv-5zwvh
+auth_source: auto
+
+keyed_groups:
+  - key: tags.os_type
