@@ -6,8 +6,8 @@ auth_source: auto
 keyed_groups:
   - key: tags.os_type
   - prefix: test
-      key: test
+    key: test
   - prefix: dev
-      key: dev
+    key: dev
   - prefix: prod
-      key: prod
+    key: prod
