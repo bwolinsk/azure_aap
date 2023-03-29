@@ -9,7 +9,7 @@
     path: "{{ source }}/{{ file }}"
     state: touch
 
--name: Add a line to a file
+- name: Add a line to a file
   community.windows.win_lineinfile:
     path: "{{ source }}/{{ file }}"
     line: "{{ line }}"
