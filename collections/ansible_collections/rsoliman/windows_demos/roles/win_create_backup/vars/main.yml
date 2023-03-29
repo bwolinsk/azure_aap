@@ -1,0 +1,5 @@
+---
+# vars file for win-create-backup
+source: example
+destination: Desktop/example-backup
+
