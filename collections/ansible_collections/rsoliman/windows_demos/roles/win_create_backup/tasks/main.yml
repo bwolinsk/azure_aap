@@ -1,4 +1,14 @@
 ---
+- name: Create report path if it doesn't exist already
+  ansible.windows.win_file:
+    path: "{{ source }}"
+    state: directory
+
+- name: Create report path if it doesn't exist already
+  ansible.windows.win_file:
+    path: "{{ source }}/{{ file }}"
+    state: touch
+
 - name: Create backup with RoboCopy
   community.windows.win_robocopy:
     src: "{{ source }}"
