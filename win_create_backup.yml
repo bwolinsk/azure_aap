@@ -1,0 +1,8 @@
+- name: Create a backup synchronization using RoboCopy
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
+  roles:
+  - rsoliman.windows_demos.win_create_backup

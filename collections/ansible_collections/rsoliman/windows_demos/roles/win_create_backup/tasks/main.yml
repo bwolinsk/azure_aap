@@ -1,0 +1,5 @@
+---
+- name: Create backup with RoboCopy
+  community.windows.win_robocopy:
+    src: "{{ source }}"
+    dest: "{{ destination }}"
