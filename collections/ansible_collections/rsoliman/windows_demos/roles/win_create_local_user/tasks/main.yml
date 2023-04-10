@@ -2,7 +2,7 @@
 - name: Create a local user on a Windows VM
   ansible.windows.win_user:
     name: "{{ username }}"
-    password "{{ password }}"
+    password: "{{ password }}"
     groups: "{{ group }}"
     update_password: on_create
     password_expired: true
