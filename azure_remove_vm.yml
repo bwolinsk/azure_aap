@@ -10,12 +10,6 @@
       remove_on_absent: all_autocreated
       state: absent
 
-  - name: Remove public IP address
-    azure.azcollection.azure_rm_publicipaddress:
-      resource_group: "{{ azure_resourcegroup_name }}"
-      name: "{{ public_ip }}"
-      state: absent
-
   - name: Delete network interface
     azure.azcollection.azure_rm_networkinterface:
       resource_group: "{{ azure_resourcegroup_name }}"
