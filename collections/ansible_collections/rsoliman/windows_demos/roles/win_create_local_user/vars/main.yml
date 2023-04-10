@@ -1,0 +1,7 @@
+---
+# vars file for win-create-backup
+username: ansibleuser
+password: ansible123
+group: Users
+
+
