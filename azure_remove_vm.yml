@@ -10,3 +10,28 @@
       remove_on_absent: all_autocreated
       state: absent
 
+  - name: Remove virtual network
+    azure_rm_virtualnetwork:
+      resource_group: "{{ azure_resourcegroup_name }}"
+      name: "{{ virtual_network }}"
+      state: absent
+
+  - name: Remove public IP address
+    azure_rm_publicipaddress:
+      resource_group: "{{ azure_resourcegroup_name }}"
+      name: "{{ public_ip }}"
+      state: absent
+
+  - name: Delete network interface
+    azure_rm_networkinterface:
+      resource_group: "{{ azure_resourcegroup_name }}"
+      name: "{{ vm_name }}_NIC"
+      state: absent
+
+  - name: Remove storage account, if it exists
+    azure_rm_storageaccount:
+      resource_group: "{{ azure_resourcegroup_name }}"
+      name: "{{ storage_account }}"
+      state: absent
+
+
