@@ -1,0 +1,9 @@
+---
+- name: Gather facts about Windows machines
+  hosts: all
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
+  tasks:
+    - name: Run the setup facts
+      ansible.builtin.setup:
