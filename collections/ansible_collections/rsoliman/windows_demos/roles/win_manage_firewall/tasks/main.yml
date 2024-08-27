@@ -1,21 +1,5 @@
 ---
-- name: Firewall rule to allow SMTP on TCP port 25
+- name: Create firewall rules
   community.windows.win_firewall_rule:
-    name: SMTP
-    localport: 25
-    action: allow
-    direction: in
-    protocol: tcp
-    state: present
-    enabled: true
-
-- name: Firewall rule to allow RDP on TCP port 3389
-  community.windows.win_firewall_rule:
-    name: Remote Desktop
-    localport: 3389
-    action: allow
-    direction: in
-    protocol: tcp
-    profiles: private
-    state: present
-    enabled: true
+    state: "{{ firewall_state }}"
+    profiles: "{{ firewall_profiles }}"
