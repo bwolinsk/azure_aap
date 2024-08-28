@@ -1,5 +1,5 @@
 ---
-- name: Create firewall rules
+- name: Manage firewall Profiles
   community.windows.win_firewall:
     state: "{{ firewall_state }}"
     profiles: "{{ firewall_profiles }}"
